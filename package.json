@@ -4,8 +4,11 @@
   "description": "Microsoft Teams integration demo for Inclusively Success Enablers",
   "main": "index.js",
   "scripts": {
-    "start": "python -m http.server 8080",
-    "dev": "python -m http.server 8080",
+    "start": "python server.py",
+    "dev": "python server.py",
+    "simple": "python -m http.server 8080",
+    "https": "python start-https.py",
+    "ngrok": "./start-with-ngrok.sh",
     "build": "echo 'No build step needed for demo'",
     "test": "echo 'No tests configured for demo'"
   },

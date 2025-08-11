@@ -6,9 +6,9 @@
   "packageName": "com.inclusively.teamsapp.demo",
   "developer": {
     "name": "Inclusively Demo",
-    "websiteUrl": "https://localhost:8080",
-    "privacyUrl": "https://localhost:8080/privacy",
-    "termsOfUseUrl": "https://localhost:8080/terms"
+    "websiteUrl": "https://5e8437823f12.ngrok-free.app",
+    "privacyUrl": "https://5e8437823f12.ngrok-free.app/privacy",
+    "termsOfUseUrl": "https://5e8437823f12.ngrok-free.app/terms"
   },
   "icons": {
     "color": "icon-color.png",
@@ -25,7 +25,7 @@
   "accentColor": "#6264A7",
   "configurableTabs": [
     {
-      "configurationUrl": "https://localhost:8080/config.html",
+      "configurationUrl": "https://5e8437823f12.ngrok-free.app/config.html",
       "canUpdateConfiguration": true,
       "scopes": ["team", "groupchat"]
     }
@@ -34,7 +34,7 @@
     {
       "entityId": "inclusively-tab",
       "name": "Success Enablers",
-      "contentUrl": "https://localhost:8080/teams",
+      "contentUrl": "https://5e8437823f12.ngrok-free.app/teams",
       "scopes": ["personal"]
     }
   ],
