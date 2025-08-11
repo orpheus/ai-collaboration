@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams Icon Generator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .generator {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #6264A7;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .canvas-container {
+            display: flex;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .canvas-item {
+            text-align: center;
+        }
+        
+        canvas {
+            border: 2px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        #colorIcon {
+            background: white;
+        }
+        
+        #outlineIcon {
+            background: transparent;
+            /* Checkered pattern to show transparency */
+            background-image: 
+                linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 8px 8px;
+            background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+        }
+        
+        .canvas-label {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .canvas-specs {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            border-left: 4px solid #6264A7;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .instructions h3 {
+            margin-top: 0;
+            color: #6264A7;
+        }
+        
+        .instructions ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin: 8px 0;
+        }
+        
+        .generate-btn {
+            background: #6264A7;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+        
+        .generate-btn:hover {
+            background: #5558A3;
+        }
+        
+        .size-info {
+            background: #e8f4fd;
+            border: 1px solid #bee5eb;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .size-info strong {
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="generator">
+        <h1>Teams Icon Generator</h1>
+        <p class="description">Generate Microsoft Teams app package icons following official specifications: 192x192 color icon with 48px padding and 32x32 white outline icon with transparent background.</p>
+        
+        <button class="generate-btn" onclick="generateIcons()">Generate Icons</button>
+        
+        <div class="canvas-container">
+            <div class="canvas-item">
+                <canvas id="colorIcon" width="192" height="192"></canvas>
+                <div class="canvas-label">Color Icon</div>
+                <div class="canvas-specs">192x192px • 96x96 symbol • 48px padding</div>
+            </div>
+            
+            <div class="canvas-item">
+                <canvas id="outlineIcon" width="32" height="32"></canvas>
+                <div class="canvas-label">Outline Icon</div>
+                <div class="canvas-specs">32x32px • RGB(255,255,255) • transparent</div>
+            </div>
+        </div>
+        
+        <div class="size-info">
+            <strong>Teams Specifications:</strong> Color icon must be square with solid/transparent background. Outline icon must use RGB(255,255,255) white with transparent background. Teams automatically rounds corners.
+        </div>
+        
+        <div class="instructions">
+            <h3>How to Save Icons</h3>
+            <ol>
+                <li>Click "Generate Icons" above to create the icons</li>
+                <li>Right-click on the <strong>Color Icon</strong> canvas → "Save image as..." → Save as <code>icon-color.png</code></li>
+                <li>Right-click on the <strong>Outline Icon</strong> canvas → "Save image as..." → Save as <code>icon-outline.png</code></li>
+                <li>Save both files in the <code>package-for-teams</code> directory</li>
+                <li>Run the package creation script: <code>cd package-for-teams && zip inclusively-teams-app.zip manifest.json icon-color.png icon-outline.png</code></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function generateIcons() {
+            generateColorIcon();
+            generateOutlineIcon();
+        }
+        
+        function generateColorIcon() {
+            const canvas = document.getElementById('colorIcon');
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas with transparent background
+            ctx.clearRect(0, 0, 192, 192);
+            
+            // Per Teams spec: 192x192 with 96x96 symbol centered and 48px padding
+            // Background: solid square (no rounded corners - Teams adds those automatically)
+            ctx.fillStyle = '#6264A7';
+            ctx.fillRect(0, 0, 192, 192);
+            
+            // Draw "I" symbol in center 96x96 area (48px padding on all sides)
+            // Symbol should be within 48px to 144px bounds (96x96 center area)
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 72px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('I', 96, 96);
+            
+            // Add small accessibility indicator within the 96x96 symbol area
+            ctx.font = '20px Arial';
+            ctx.fillText('♿', 115, 115);
+        }
+        
+        function generateOutlineIcon() {
+            const canvas = document.getElementById('outlineIcon');
+            const ctx = canvas.getContext('2d');
+            
+            // Create new ImageData to manually control every pixel
+            const imageData = ctx.createImageData(32, 32);
+            const data = imageData.data;
+            
+            // Initialize all pixels to fully transparent (RGBA: 0,0,0,0)
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = 0;     // Red
+                data[i + 1] = 0; // Green
+                data[i + 2] = 0; // Blue
+                data[i + 3] = 0; // Alpha (fully transparent)
+            }
+            
+            // Function to set a pixel to pure white (255,255,255,255)
+            function setWhitePixel(x, y) {
+                if (x >= 0 && x < 32 && y >= 0 && y < 32) {
+                    const index = (y * 32 + x) * 4;
+                    data[index] = 255;     // Red
+                    data[index + 1] = 255; // Green
+                    data[index + 2] = 255; // Blue
+                    data[index + 3] = 0; // Alpha (fully opaque)
+                }
+            }
+            
+            // Draw "I" shape pixel by pixel - no anti-aliasing
+            const centerX = 16;
+            const centerY = 16;
+            
+            // Top horizontal bar (y = 6, x = 8 to 23)
+            for (let x = 8; x <= 23; x++) {
+                setWhitePixel(x, 6);
+                setWhitePixel(x, 7);
+                setWhitePixel(x, 8);
+            }
+            
+            // Vertical bar (x = 14 to 17, y = 9 to 22)  
+            for (let y = 9; y <= 22; y++) {
+                setWhitePixel(14, y);
+                setWhitePixel(15, y);
+                setWhitePixel(16, y);
+                setWhitePixel(17, y);
+            }
+            
+            // Bottom horizontal bar (y = 23 to 25, x = 8 to 23)
+            for (let x = 8; x <= 23; x++) {
+                setWhitePixel(x, 23);
+                setWhitePixel(x, 24);
+                setWhitePixel(x, 25);
+            }
+            
+            // Small accessibility indicator (bottom right corner)
+            setWhitePixel(26, 26);
+            setWhitePixel(27, 26);
+            setWhitePixel(28, 26);
+            setWhitePixel(26, 27);
+            setWhitePixel(27, 27);
+            setWhitePixel(28, 27);
+            
+            // Put the image data back to canvas
+            ctx.putImageData(imageData, 0, 0);
+        }
+        
+        
+        // Auto-generate icons on page load
+        window.onload = function() {
+            generateIcons();
+        };
+    </script>
+</body>
+</html>
