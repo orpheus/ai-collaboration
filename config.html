@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusively Configuration</title>
+    <script src="https://res.cdn.office.net/teams-js/2.0.0/js/MicrosoftTeams.min.js"></script>
+</head>
+<body>
+    <div style="padding: 20px; font-family: 'Segoe UI';">
+        <h2>Configure Inclusively Success Enablers</h2>
+        <p>This tab will help your team find Success Enablers for workplace barriers.</p>
+        
+        <label>
+            <input type="checkbox" id="enableNotifications" checked> 
+            Enable notifications for new Success Enablers
+        </label>
+        <br><br>
+        
+        <button onclick="saveConfig()" style="background: #6264A7; color: white; border: none; padding: 10px 20px; border-radius: 4px;">
+            Save Configuration
+        </button>
+    </div>
+    
+    <script>
+        microsoftTeams.app.initialize();
+        
+        function saveConfig() {
+            microsoftTeams.pages.config.setConfig({
+                contentUrl: `${window.location.origin}/teams`,
+                entityId: 'inclusively-success-enablers',
+                suggestedDisplayName: 'Success Enablers'
+            });
+            
+            microsoftTeams.pages.config.setValidityState(true);
+            alert('Configuration saved! The Success Enablers tab is ready to use.');
+        }
+        
+        // Set initial validity
+        microsoftTeams.pages.config.setValidityState(true);
+    </script>
+</body>
+</html>

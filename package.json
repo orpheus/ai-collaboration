@@ -1,0 +1,15 @@
+{
+  "name": "inclusively-teams-demo",
+  "version": "1.0.0",
+  "description": "Microsoft Teams integration demo for Inclusively Success Enablers",
+  "main": "index.js",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "dev": "python -m http.server 8080",
+    "build": "echo 'No build step needed for demo'",
+    "test": "echo 'No tests configured for demo'"
+  },
+  "keywords": ["teams", "microsoft", "demo", "inclusively"],
+  "author": "Inclusively",
+  "license": "MIT"
+}

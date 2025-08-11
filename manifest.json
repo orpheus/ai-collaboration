@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.16",
+  "version": "1.0.0",
+  "id": "inclusively-demo-app",
+  "packageName": "com.inclusively.teamsapp.demo",
+  "developer": {
+    "name": "Inclusively Demo",
+    "websiteUrl": "https://localhost:8080",
+    "privacyUrl": "https://localhost:8080/privacy",
+    "termsOfUseUrl": "https://localhost:8080/terms"
+  },
+  "icons": {
+    "color": "icon-color.png",
+    "outline": "icon-outline.png"
+  },
+  "name": {
+    "short": "Inclusively",
+    "full": "Inclusively Success Enablers"
+  },
+  "description": {
+    "short": "Find Success Enablers for workplace barriers",
+    "full": "Inclusively helps you find Success Enablers to overcome workplace barriers and improve well-being."
+  },
+  "accentColor": "#6264A7",
+  "configurableTabs": [
+    {
+      "configurationUrl": "https://localhost:8080/config.html",
+      "canUpdateConfiguration": true,
+      "scopes": ["team", "groupchat"]
+    }
+  ],
+  "staticTabs": [
+    {
+      "entityId": "inclusively-tab",
+      "name": "Success Enablers",
+      "contentUrl": "https://localhost:8080/teams",
+      "scopes": ["personal"]
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "localhost:8080"
+  ],
+  "webApplicationInfo": {
+    "id": "mock-azure-app-id",
+    "resource": "https://graph.microsoft.com"
+  }
+}

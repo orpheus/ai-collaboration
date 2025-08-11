@@ -1,0 +1,329 @@
+/* Teams Theme Variables */
+:root {
+  /* Default (Light) Theme */
+  --teams-primary-color: #6264A7;
+  --teams-primary-hover: #585A96;
+  --teams-bg-color: #ffffff;
+  --teams-surface-color: #f8f8f8;
+  --teams-text-primary: #252423;
+  --teams-text-secondary: #605e5c;
+  --teams-text-tertiary: #8a8886;
+  --teams-border-color: #e1dfdd;
+  --teams-hover-color: #f3f2f1;
+  --teams-shadow: 0 2px 4px rgba(0,0,0,0.14), 0 0px 2px rgba(0,0,0,0.12);
+  --teams-shadow-hover: 0 4px 8px rgba(0,0,0,0.14), 0 0px 4px rgba(0,0,0,0.12);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --teams-primary-color: #6264A7;
+  --teams-primary-hover: #7B7DBD;
+  --teams-bg-color: #1f1f1f;
+  --teams-surface-color: #2d2d2d;
+  --teams-text-primary: #ffffff;
+  --teams-text-secondary: #d1d1d1;
+  --teams-text-tertiary: #a6a6a6;
+  --teams-border-color: #484644;
+  --teams-hover-color: #3a3a3a;
+  --teams-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 0px 2px rgba(0,0,0,0.2);
+  --teams-shadow-hover: 0 4px 8px rgba(0,0,0,0.3), 0 0px 4px rgba(0,0,0,0.2);
+}
+
+/* High Contrast Theme */
+[data-theme="contrast"] {
+  --teams-primary-color: #ffff00;
+  --teams-primary-hover: #cccc00;
+  --teams-bg-color: #000000;
+  --teams-surface-color: #000000;
+  --teams-text-primary: #ffffff;
+  --teams-text-secondary: #ffffff;
+  --teams-text-tertiary: #ffffff;
+  --teams-border-color: #ffffff;
+  --teams-hover-color: #1a1a1a;
+  --teams-shadow: 0 2px 4px rgba(255,255,255,0.5), 0 0px 2px rgba(255,255,255,0.3);
+  --teams-shadow-hover: 0 4px 8px rgba(255,255,255,0.5), 0 0px 4px rgba(255,255,255,0.3);
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  background-color: var(--teams-bg-color);
+  color: var(--teams-text-primary);
+  line-height: 1.4;
+  transition: all 0.2s ease;
+}
+
+#root {
+  min-height: 100vh;
+  padding: 16px;
+}
+
+/* Teams App Styles */
+.teams-app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.teams-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 24px 0;
+}
+
+.teams-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--teams-text-primary);
+  margin-bottom: 8px;
+}
+
+.teams-subtitle {
+  font-size: 16px;
+  color: var(--teams-text-secondary);
+}
+
+/* Hero Search Component */
+.hero-search {
+  background: var(--teams-surface-color);
+  border: 1px solid var(--teams-border-color);
+  border-radius: 8px;
+  padding: 32px 24px;
+  margin-bottom: 32px;
+  box-shadow: var(--teams-shadow);
+}
+
+.hero-search-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--teams-text-primary);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--teams-border-color);
+  border-radius: 4px;
+  background: var(--teams-bg-color);
+  color: var(--teams-text-primary);
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--teams-primary-color);
+  box-shadow: 0 0 0 2px rgba(98, 100, 167, 0.2);
+}
+
+/* Example Prompts */
+.example-prompts {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--teams-text-primary);
+  margin-bottom: 16px;
+}
+
+.prompt-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.prompt-button {
+  background: var(--teams-bg-color);
+  border: 1px solid var(--teams-border-color);
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: var(--teams-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.prompt-button:hover {
+  background: var(--teams-hover-color);
+  border-color: var(--teams-primary-color);
+  transform: translateY(-1px);
+  box-shadow: var(--teams-shadow-hover);
+}
+
+/* Success Enabler Cards */
+.success-enablers {
+  margin-bottom: 32px;
+}
+
+.enabler-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.enabler-card {
+  background: var(--teams-surface-color);
+  border: 1px solid var(--teams-border-color);
+  border-radius: 8px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--teams-shadow);
+}
+
+.enabler-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--teams-shadow-hover);
+  border-color: var(--teams-primary-color);
+}
+
+.enabler-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--teams-text-primary);
+  margin-bottom: 8px;
+}
+
+.enabler-card-description {
+  font-size: 14px;
+  color: var(--teams-text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.enabler-card-tag {
+  display: inline-block;
+  background: var(--teams-primary-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Category Browse */
+.category-browse {
+  margin-bottom: 32px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.category-card {
+  background: var(--teams-surface-color);
+  border: 1px solid var(--teams-border-color);
+  border-radius: 8px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--teams-shadow);
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--teams-shadow-hover);
+  border-color: var(--teams-primary-color);
+}
+
+.category-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.category-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--teams-text-primary);
+  margin-bottom: 4px;
+}
+
+.category-count {
+  font-size: 12px;
+  color: var(--teams-text-tertiary);
+}
+
+/* Performance Indicator */
+.performance-indicator {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: var(--teams-surface-color);
+  border: 1px solid var(--teams-border-color);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--teams-text-secondary);
+  box-shadow: var(--teams-shadow);
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+  #root {
+    padding: 8px;
+  }
+  
+  .teams-app {
+    padding: 0 8px;
+  }
+  
+  .hero-search {
+    padding: 24px 16px;
+  }
+  
+  .teams-title {
+    font-size: 24px;
+  }
+  
+  .prompt-buttons {
+    flex-direction: column;
+  }
+  
+  .prompt-button {
+    text-align: center;
+  }
+  
+  .enabler-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive Design - Teams Mobile */
+@media (max-width: 480px) {
+  .hero-search-title {
+    font-size: 18px;
+  }
+  
+  .search-input {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .performance-indicator {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 16px 0;
+    text-align: center;
+  }
+}
