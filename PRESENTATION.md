@@ -1,4 +1,4 @@
-System Prompt: You are an expert technologist consultant and presenter. Help me to create a powerful, yet simple 
+**System Prompt:** You are an expert technologist, consultant, and presenter. Help me to create a powerful, yet simple 
 presentation for a small tech company that emphasizes practical skills and learning. Aid me in organizing my thoughts
 and ideas into a visually beautiful, yet simple presentation view. Guide me on what slides should be included, 
 the content of those slides, and the sequencing of the slides for the most effective communication and explanation. Do 
@@ -8,23 +8,23 @@ to take next. Once you understand what I want and what I have, let's refine the 
 for next steps with the goal of completing the presentation. Challenge me on what should or should not exist in the slides.
 Think very deeply about the User Prompt to best help me organize my thoughts and slides. 
 
-User Prompt: I'm creating a presentation to walk a small technology startup company focused on HR Automation for providing disability 
+**User Prompt:** I'm creating a presentation to walk a small technology startup company focused on HR Automation for providing disability 
 accommodation and business metrics around these on AI Engineering Principles & Applications. To prep for the presentation, 
 I took an Anthropic course on AI Fluency. You can find someone else's summary of it here: https://medium.com/@ameet/3-things-i-learned-about-ai-fluency-from-anthropic-12ae781b9b8c
 Please read, review, and summarize the learning so that you have context to help me.
 
-My goal for the presentation is to achieve the following:
+**My goals for the presentation:**
 
-1. Teach: "What is AI Engineering"
-2. Teach: "How to implement AI Engineering Principles [regardless of AI tool]"
-3. Show: The power of AI in action via these AI Engineering Principles
+1. Teach: "What is AI Collaboration"
+2. Teach: "How to implement AI Collaboration Principles [that are tool agnostic]"
+3. Show: The power of AI in action via these Principles
 4. Show: Tips, tricks, and workflows along the way
 5. Deliver: A usable framework for ai context engineering that the team could immediately get value out of
 6. Demo: The framework in use with a practical example related to the company's current engineering goals
 
-My Current Thoughts:
+**My current thoughts:**
 
-Learnings
+**Learnings**
 
 - I want to share my learning from the AI Fluency Course, including 
   - the three primary ways to engage with AI
@@ -50,7 +50,7 @@ Learnings
   - LLMs as agents, independently deciding what to do to get more richly related context
   - Note: I currently have these slides already built out, but open to feedback in terms of overall presentation design
 
-Demos
+**Demos**
 
 - I want to show demos of the three ways to engage with AI
   - Automation
@@ -84,7 +84,7 @@ Demos
       - Claude Code
       - Gemini CLI
 
-What I have so far
+**What I have so far**
 
 - Slide decks for LLM Basics
 - One slide with a logos of the tools listed above
@@ -92,7 +92,7 @@ What I have so far
 - A fully built demo (using the context engineering framework) for a Microsft Teams App which I have tested works in Teams
   - the goal is to build it again live using the same commands/prompts, but have the fully built one for quick demo-purposes
 
-What I still need
+**What I still need**
 
 - code examples for the automation and augmentation demos, including a backend and frontend example
   - Backend
@@ -124,42 +124,43 @@ What I still need
   - slides for the presentation
 
 
---
+## AI Output 
 
-  Proposed Presentation Flow (60 min)
+The AI output a lot; this is what I ended up keeping, along with the frontend/backend demo projectss
 
-  Act 1: Foundation (10 min)
+### Presentation
+
+**Proposed Presentation Flow (60 min)**
+
+**Act 1: Foundation (10 min)**
 
 1. Hook (2 min): "What if AI could be your engineering team member, not just your autocomplete?"
 2. What is AI Engineering? (3 min): Brief definition, why it matters for their work
 3. The 4 Core Competencies (5 min): Delegation, Description, Discernment, Diligence with quick examples
 
-  Act 2: The Three Modes (15 min)
+**Act 2: The Three Modes (15 min)**
 
 4. Automation Demo (5 min): Write tests for ChatWithFramework method
 5. Augmentation Demo (5 min): Code review for bugs/edge cases
 6. Agency Preview (5 min): "Now imagine AI planning AND executing..." → introduce your framework
 
-  Act 3: The Framework in Action (30 min)
+**Act 3: The Framework in Action (30 min)**
 
 7. Framework Introduction (5 min): Show the markdown template, explain the workflow
 8. Live Build: Teams App (20 min): Step-by-step using your commands
 9. Tool Agnostic Note (2 min): "These principles work in Cursor, JetBrains, anywhere"
 10. Wrap-up (3 min): GitHub repo, next steps, Q&A
 
-  Buffer/Q&A (5 min)
+**Buffer/Q&A (5 min)**
 
-
---
-
-Presentation Structure Ready:
+**Presentation Structure Ready:**
 
 - Act 1 (10 min): Foundation & 4 Core Competencies
 - Act 2 (15 min): Three engagement modes with live demos
 - Act 3 (30 min): Framework in action with Teams app build
 - Buffer (5 min): Q&A
 
-Key Features:
+**Key Features:**
 
 - Live coding demos that address Inclusively's specific needs (Teams integration, BigQuery APIs, web scraping)
 - Tool-agnostic principles that work with JetBrains AI (what your team uses)
