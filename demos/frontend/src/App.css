@@ -1,0 +1,78 @@
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.App-header p {
+  color: #666;
+  font-size: 18px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.tabs button {
+  padding: 12px 24px;
+  border: none;
+  background: white;
+  color: #666;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabs button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tabs button.active {
+  background: #667eea;
+  color: white;
+}
+
+.content {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  min-height: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+  padding: 50px;
+}
+
+.error {
+  text-align: center;
+  color: #e53e3e;
+  font-size: 18px;
+  padding: 50px;
+  background: #fff5f5;
+  border-radius: 8px;
+  border: 1px solid #fc8181;
+}

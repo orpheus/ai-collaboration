@@ -1,6 +1,6 @@
 # Command 
 
-Name: Review Task
+Name: Refine Task
 Arguments: 
 - `TASK_FILEPATH`: the filepath to the `task_requirement_document`
 - `MODE`: can be either `template` or `interactive`, default to `interactive`

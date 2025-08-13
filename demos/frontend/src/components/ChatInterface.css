@@ -1,0 +1,137 @@
+.chat-interface h2 {
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.chat-interface .description {
+  color: #718096;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.messages-container {
+  min-height: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #f7fafc;
+}
+
+.welcome-message {
+  text-align: center;
+  color: #718096;
+  padding: 40px;
+}
+
+.welcome-message ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.welcome-message li {
+  padding: 5px 0;
+}
+
+.welcome-message li:before {
+  content: "• ";
+  color: #667eea;
+  font-weight: bold;
+}
+
+.message {
+  margin-bottom: 20px;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.message.user .message-label {
+  color: #667eea;
+}
+
+.message.assistant .message-label {
+  color: #48bb78;
+}
+
+.message.error .message-label {
+  color: #e53e3e;
+}
+
+.message-content {
+  padding: 12px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
+.message.user .message-content {
+  background: #edf2f7;
+  margin-left: 20%;
+}
+
+.message.assistant .message-content {
+  background: white;
+  margin-right: 20%;
+  border: 1px solid #e2e8f0;
+}
+
+.message.error .message-content {
+  background: #fff5f5;
+  border: 1px solid #fc8181;
+  color: #c53030;
+}
+
+.message.loading .message-content {
+  color: #718096;
+  font-style: italic;
+}
+
+.chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.chat-form input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.chat-form button {
+  padding: 12px 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.chat-form button:hover:not(:disabled) {
+  background: #5a67d8;
+}
+
+.chat-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

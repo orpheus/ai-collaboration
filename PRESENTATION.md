@@ -75,7 +75,7 @@ Demos
     - IDES
       - Cursor
       - Void
-    - VS Code / JetBrains Pluginss
+    - VS Code / JetBrains Plugins
       - GitHub Copilot
       - JetBrains AI Assistant
       - Cline AI
@@ -122,3 +122,49 @@ What I still need
 - **IMPORTANT**: 
   - an organized and thoughtful presentation layout
   - slides for the presentation
+
+
+--
+
+  Proposed Presentation Flow (60 min)
+
+  Act 1: Foundation (10 min)
+
+1. Hook (2 min): "What if AI could be your engineering team member, not just your autocomplete?"
+2. What is AI Engineering? (3 min): Brief definition, why it matters for their work
+3. The 4 Core Competencies (5 min): Delegation, Description, Discernment, Diligence with quick examples
+
+  Act 2: The Three Modes (15 min)
+
+4. Automation Demo (5 min): Write tests for ChatWithFramework method
+5. Augmentation Demo (5 min): Code review for bugs/edge cases
+6. Agency Preview (5 min): "Now imagine AI planning AND executing..." → introduce your framework
+
+  Act 3: The Framework in Action (30 min)
+
+7. Framework Introduction (5 min): Show the markdown template, explain the workflow
+8. Live Build: Teams App (20 min): Step-by-step using your commands
+9. Tool Agnostic Note (2 min): "These principles work in Cursor, JetBrains, anywhere"
+10. Wrap-up (3 min): GitHub repo, next steps, Q&A
+
+  Buffer/Q&A (5 min)
+
+
+--
+
+Presentation Structure Ready:
+
+- Act 1 (10 min): Foundation & 4 Core Competencies
+- Act 2 (15 min): Three engagement modes with live demos
+- Act 3 (30 min): Framework in action with Teams app build
+- Buffer (5 min): Q&A
+
+Key Features:
+
+- Live coding demos that address Inclusively's specific needs (Teams integration, BigQuery APIs, web scraping)
+- Tool-agnostic principles that work with JetBrains AI (what your team uses)
+- Practical prompt templates with clear progression
+- Ready-to-run demo applications
+
+The materials emphasize practical application over theory, perfect for your hands-on audience of developers, data scientists, and product managers. Everything is
+organized to share via GitHub after your presentation.

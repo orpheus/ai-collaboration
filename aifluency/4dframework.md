@@ -26,3 +26,13 @@ Describing what we need, evaluating what we get, and refining our request.
 **Diligence**
 
 Goal: taking ownership of your work and taking responsibility for the outputs
+
+# Delegation
+
+1. Phase 1: Planning (AI-Heavy)
+2. Phase 2: Development (Hybrid)
+3. Phase 3: Refinement (Human-Heavy)
+4. Phase 4: Delivery (Human-Only)
+
+Effective delegation to AI in preparation follows the principle: **AI handles the "what" (information, structure, options), humans handle the "why" and "how" (purpose, delivery, connection)**. 
+This ensures efficiency while maintaining authenticity and impact.
