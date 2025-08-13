@@ -110,3 +110,35 @@ Describing what we need, evaluating what we get, and refining our request.
 ## Diligence
 
 Goal: taking ownership of your work and taking responsibility for the outputs
+- Taking responsibility for the outputs and interactions of your AI collaboration
+- Making sure your use of AI systems is not only product, but rigorous, transparent, and accountable
+- Crucial in a professional environment to ask the broader questions
+  - What are the implications of working with this AI?
+  - Who might be affected by what is created?
+  - Who has access to the data used to produce this output?
+  - How do I make sure that my interactions and output align to ethical values and standards?
+- For example, when driving, it's not just about getting from A to B efficiently, 
+  - we also care about safety, following the rules of the road, and our effects on other drivers
+- Working with AI requires awareness of broader contexts and their implications
+
+1. Creation Diligence ("Ability to be critical and intentional about what AI systems you use")
+   1. Becoming more critically thoughtful about **what** systems you work with, **how** you work with them, and the **impact** of the interaction
+   2. Questions to consider:
+      1. How was the model trained?
+      2. What data was used?
+      3. Who owns the data I'm inputting?
+      4. Who may have access to the data once it's shared?
+      5. How am I protecting the privacy and security of myself and others?
+      6. How does this interaction align with my organization's policies?
+2. Transparency Diligence ("Ability to be open and honest about your AI interactions")
+   1. Who needs to know
+   2. How should I communicate this?
+   3. What level of detail is needed?
+   4. About maintaining trust and respect between teams
+   5. For example, if a teammate drafts a product proposal using AI, being open about which parts were AI assisted creates trust so everyone's on the same page
+3. Deployment Diligence ("Ability to take informed responsibility for your AI's outputs")
+   1. Verify facts
+   2. Check for bias
+   3. ensure accuracy
+   4. Check for usage rights
+   5. For example, if a journalist used AI to write an article, they have to verify facts, add sources, and align to journalistic integrity just as if they didn't use AI
