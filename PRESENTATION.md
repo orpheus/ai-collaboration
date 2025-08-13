@@ -94,7 +94,7 @@ What I have so far
 
 What I still need
 
-- code examples for the automation and augmentation demos, including a backend and frontend exmaple
+- code examples for the automation and augmentation demos, including a backend and frontend example
   - Backend
     - Create a minimal golang api using gin with no other external dependencies
       - store in /demos/backend
