@@ -1,5 +1,17 @@
 # Context Engineering Framework Workflow
 
+```
+[1] define_task.md  → [2?] design_task [3] refine_task.md  
+      ↓                  ↓                      ↓
+  [Task Req Doc   ←  Task Design Doc] ← Task Analysis Plan
+      ↓                  
+        ----→ [4] prepare_task.md → Execution Plan
+                                         ↓
+                               [5] execute_task.md
+                                         ↓
+                                 Execution Summary
+```
+
 ## Overview
 A systematic approach to working with AI that leverages the 4 D's (Delegation, Description, Discernment, Diligence) to achieve consistent, high-quality results.
 
@@ -17,11 +29,11 @@ Persistent context that provides AI with:
 
 ### 2. Command Structure
 Organized prompts for common tasks:
-- `defin_task.md` - Create and document initial task requirements
+- `define_task.md` - Create and document initial task requirements
 - `design_task.md` - Create and document new task requirements
 - `refine_task.md` - Analyze & enhance task
-- `plan_task.md` - Transform task into execute
-- `execute_task.md` - Execute task
+- `prepare_task.md` - Transform tasks into executable plan
+- `execute_task.md` - Execute task plan
 
 
 ### 3. Workflow Stages
@@ -32,6 +44,14 @@ Organized prompts for common tasks:
 
 ### Setting Up Your Project Context
 
+Running the Claude `/init` slash command will analyze your code base and create a strong summary for you to use
+```bash
+claude
+/init
+```
+
+Additionally, you'll want to create a `PROJECT.md` directory with more information about your specific 
+project information, e.g. team practices, preferences, tech stack, sprint goal, etc.
 ```markdown
 # PROJECT.md
 
@@ -60,220 +80,149 @@ Microsoft Teams application for managing disability accommodations
 
 ---
 
-## Stage 2: Task Planning
+## Stage 2: Task Planning: `define_task`
 
-### Breaking Down Complex Tasks
 
-**Input**: High-level requirement  
-**Output**: Structured implementation plan
+Running `/define_task` will output a task requirement doc that you can
+fill out yourself or work with Claude to fill out.
 
-### The Planning Prompt Template:
-
-```markdown
-Given the context in PROJECT.md, create an implementation plan for:
-[TASK DESCRIPTION]
-
-Break this down into:
-1. Discrete, testable steps
-2. Dependencies between steps
-3. Validation criteria for each step
-4. Risk factors and mitigations
-
-Format as numbered checklist with time estimates.
-```
-
-### Example Output:
-```markdown
-## Implementation Plan: Teams SSO Integration
-
-1. [ ] Research Teams authentication flow (30 min)
-   - Review Microsoft documentation
-   - Identify required endpoints
-   - Note token formats
-
-2. [ ] Create auth service structure (45 min)
-   - Define interfaces
-   - Set up file structure
-   - Add to dependency injection
-
-3. [ ] Implement token validation (2 hours)
-   - Parse JWT tokens
-   - Verify signatures
-   - Extract claims
-   - Test with mock tokens
-
-[continues...]
-```
-
----
-
-## Stage 3: Execution
-
-### Step-by-Step Implementation
-
-**For each planned step:**
-
-1. **Provide Context**
-   ```markdown
-   Current step: [Step from plan]
-   Previous steps completed: [List]
-   Dependencies available: [List]
-   ```
-
-2. **Execute with Constraints**
-   ```markdown
-   Implement [specific feature] following:
-   - Existing patterns in codebase
-   - Error handling conventions
-   - Testing requirements
-   - Security best practices
-   ```
-
-3. **Validate Output**
-   - Does it compile/run?
-   - Are tests passing?
-   - Does it follow conventions?
-   - Are edge cases handled?
-
----
-
-## Stage 4: Review and Iteration
-
-### Quality Assurance Loop
-
-```mermaid
-graph TD
-    A[AI Generated Code] --> B{Automated Tests}
-    B -->|Pass| C{Code Review}
-    B -->|Fail| D[Fix Issues]
-    C -->|Approved| E[Commit]
-    C -->|Changes Needed| D
-    D --> A
-```
-
-### Review Checklist:
-- [ ] Functionality correct
-- [ ] Edge cases handled  
-- [ ] Security validated
-- [ ] Performance acceptable
-- [ ] Documentation complete
-- [ ] Tests comprehensive
-
----
-
-## Stage 5: Knowledge Capture
-
-### Continuous Improvement
-
-After each task:
-
-1. **Update Context Files**
-   - New patterns discovered
-   - Decisions made
-   - Lessons learned
-
-2. **Refine Commands**
-   - What prompts worked well?
-   - What needed clarification?
-   - Create reusable templates
-
-3. **Document Gotchas**
-   - Framework quirks
-   - API limitations
-   - Workarounds
-
----
-
-## Practical Example: Building a Feature
-
-### Task: Add User Preferences to Teams App
-
-#### Step 1: Plan
 ```bash
-AI: "Create implementation plan for user preferences feature"
+/define_task "my task"
 ```
 
-Output:
-1. Database schema for preferences
-2. API endpoints (GET/PUT /preferences)
-3. React preference component
-4. Teams storage integration
-5. Migration script
+#### When to use
+1. Use this if you already know what needs to be done and you have concrete requirements.
+2. Use this on a design doc generated from `design_task` to transform the deisgn thinking into a task requirement doc 
 
-#### Step 2: Execute First Step
-```bash
-AI: "Create PostgreSQL schema for user preferences table with userId, theme, notifications, accessibility settings"
-```
+#### Output
+The output is a high level task with required subtasks, their descriptions, and requirements.
 
-#### Step 3: Validate
-```bash
-AI: "Review the schema for completeness, add indexes for performance, ensure GDPR compliance"
-```
+```markdown
+# Task: $TASK_NAME
 
-#### Step 4: Continue
-Repeat for each planned step
+## Subtasks
 
-#### Step 5: Integration Test
-```bash
-AI: "Create end-to-end test that verifies preference persistence across Teams sessions"
+1. <subtask_1>
+2. <subtask_2>
+3. <subtask_3>
+4. ...
+
+### Subtask 1: <subtask_1>
+
+**Description** 
+
+**Requirements**
+ 
+- <requirement_1>
 ```
 
 ---
 
-## Command Templates
+## Stage 3: Task Design: `design_task`
 
-### 1. Dispatch Task Command
-```markdown
-# Purpose: Delegate work effectively
 
-Analyze this task and determine:
-1. What should AI do completely
-2. What needs human oversight
-3. What requires human implementation
+Running `/design_task` will lead you through a design thinking exercise on your task and output the design thoughts
 
-Task: [DESCRIPTION]
-Context: [RELEVANT INFORMATION]
-Constraints: [TIME, QUALITY, SECURITY]
+```bash
+/design_task "some task that needs more thinking"
 ```
 
-### 2. Plan Task Command
+#### When to use
+
+1. Use this when you need to explore an unknown topic or think through design decisions
+
+#### Output
+
 ```markdown
-# Purpose: Decompose complex work
+# Design: {PROBLEM_AREA}
 
-Create a step-by-step plan for:
-[TASK]
+## Problem Statement
+{1-2 sentence synthesis from Phase 1}
 
-Include:
-- Prerequisites
-- Implementation steps
-- Testing approach
-- Rollback plan
+## Solution Approach
+{Brief description of chosen direction}
+
+## Unknowns Requiring Investigation
+- {List items that need spikes or research}
+
+## Proposed Task Structure
+### Subtasks
+1. {subtask_1}
+2. {subtask_2}
+3. {subtask_3}
+
+### Task Requirements
+{For each subtask, 2-3 concrete requirements}
+
+## Next Step
+Run: `new_task "{PROBLEM_AREA}_implementation" template`
+Then copy subtasks and requirements from this design document.
+```
+---
+
+## Stage 4: Task Refine: `refine_task`
+
+
+Running `/refine_task` will run different analyses on your task requirement doc and enrich the document.
+Essentially, it performs additional thinking for you and makes sure your tasks are actionable.
+
+```bash
+/refine_task "<TASK_REQUIREMENT_DOC>
 ```
 
-### 3. Execute Step Command
-```markdown
-# Purpose: Implement specific functionality
+#### When to use
 
-Implement: [SPECIFIC STEP]
-Context: [PREVIOUS STEPS]
-Requirements: [DETAILED SPECS]
-Validation: [SUCCESS CRITERIA]
+1. Use this either during or after tasks requirmenet planning to enrich the data with a delegation analysis and SMART analysis 
+
+#### Output
+
+Updates the existing <TASK_REQUIREMENT_DOC>
+
+---
+
+## Stage 5: Prepare Task: `prepare_task`
+
+Running `/prepare_tasks` will turn your requirements into an actionable plan an AI can execute and verify 
+
+```bash
+/prepare_task "<TASK_REQUIREMENT_DOC>"
 ```
 
-### 4. Review Output Command
+#### When to use
+
+1. Use this after you've refined your task doc and are preparing for execution
+
+#### Output
+
+Outputs a new execution brief file
+
 ```markdown
-# Purpose: Quality assurance
+# Execution Brief for TASK_NAME
 
-Review this code for:
-1. Correctness
-2. Edge cases
-3. Performance
-4. Security
-5. Maintainability
-
-Code: [CODE TO REVIEW]
-Context: [INTENDED PURPOSE]
+## Subtask: SUBTASK_NAME
+**Inputs:**  
+**Outputs:**  
+**Constraints:**  
+**Plan:**  
+1. ...
 ```
+---
+
+## Stage 6: Executee Task: `execute_task`
+
+Running `/execute_task` will execute the task execution brief. This is where the magic happens. 
+
+```bash
+/execute_tasl "<TASK_EXECUTION_BRIEF>"
+```
+
+#### When to use
+
+1. Use after you've created a task execution brief doc on your task requirement doc
+
+#### Output
+
+Outputs an execution summary
 
 ---
 
@@ -304,27 +253,6 @@ Context: [INTENDED PURPOSE]
 - What works well?
 - What causes confusion?
 - How can prompts improve?
-
----
-
-## Measuring Success
-
-### Metrics to Track
-
-1. **Velocity Improvement**
-   - Tasks completed per sprint
-   - Time to implement features
-   - Bug reduction rate
-
-2. **Quality Metrics**
-   - Test coverage increase
-   - Code review findings
-   - Production incidents
-
-3. **Team Adoption**
-   - Developers using framework
-   - Prompts shared/reused
-   - Knowledge base growth
 
 ---
 
@@ -360,11 +288,4 @@ Focus on principles, not specific tools
 
 ## Conclusion
 
-The Context Engineering Framework transforms AI from a code completion tool into a true engineering partner. By providing rich context, structured workflows, and continuous validation, you can achieve:
-
-- **3-5x faster feature development**
-- **Higher code quality and consistency**
-- **Better knowledge preservation**
-- **Reduced cognitive load**
-
-Start small, iterate often, and let the framework evolve with your needs.
+Thank you!
